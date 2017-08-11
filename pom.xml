@@ -1,0 +1,178 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.sisman</groupId>
+  <artifactId>sisman</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <dependencies>
+  	<!-- Hibernate -->
+  	<dependency>
+	    <groupId>org.hibernate.javax.persistence</groupId>
+	    <artifactId>hibernate-jpa-2.1-api</artifactId>
+	    <version>1.0.0.Final</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-entitymanager</artifactId>
+	    <version>5.2.9.Final</version>
+	    <exclusions>
+	    	<exclusion>
+	    		<groupId>org.slf4j</groupId>
+	    		<artifactId>slf4j-api</artifactId>
+	    	</exclusion>
+	    </exclusions>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>5.0.1.Final</version>
+		<scope>compile</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>42.0.0</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- Bean Validation -->
+	<dependency>
+	    <groupId>javax.validation</groupId>
+	    <artifactId>validation-api</artifactId>
+	    <version>1.1.0.Final</version>
+	</dependency>
+	
+	<!-- lombok -->
+	<dependency>
+	    <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <version>1.16.16</version>
+	</dependency>
+	
+	
+	<!-- Spring -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>4.3.7.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>4.3.7.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>4.3.7.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>4.3.7.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-oxm</artifactId>
+	    <version>4.3.7.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.data</groupId>
+	    <artifactId>spring-data-jpa</artifactId>
+	    <version>1.11.1.RELEASE</version>
+	</dependency>
+	
+	<!-- JSON -->
+	<dependency>
+	    <groupId>org.codehaus.jackson</groupId>
+	    <artifactId>jackson-jaxrs</artifactId>
+	    <version>1.9.13</version>
+	</dependency>
+	
+	<!-- Servlet -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>javax.servlet.jsp-api</artifactId>
+	    <version>2.3.1</version>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+        <groupId>javax.servlet</groupId>
+    	<artifactId>jstl</artifactId>
+  	    <version>1.2</version>
+     </dependency>
+	<dependency>
+	<!-- Utilitarios -->
+	    <groupId>commons-lang</groupId>
+	    <artifactId>commons-lang</artifactId>
+	    <version>2.6</version>
+	</dependency>
+	
+	<!-- Log -->
+	<dependency>
+       	<groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.7.1</version>
+    </dependency>
+        <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.16</version>
+    </dependency>
+    <dependency>
+        <artifactId>commons-logging</artifactId>
+        <groupId>commons-logging</groupId>
+        <version>1.1.1</version>
+    </dependency>
+    
+    <!-- Testes -->
+    <dependency>
+        <groupId>junit</groupId>
+    	<artifactId>junit</artifactId>
+    	<version>4.12</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.hamcrest</groupId>
+	    <artifactId>hamcrest-library</artifactId>
+	    <version>1.3</version>
+	    <scope>test</scope>
+	</dependency>
+	
+  </dependencies>
+  
+  <build>
+     	<finalName>sisman</finalName>	
+	   <plugins>
+		   	<plugin>
+			   	<artifactId>maven-compiler-plugin</artifactId>
+	            <configuration>
+	                <source>1.7</source>
+	                <target>1.7</target>
+	            </configuration>
+		   	</plugin>
+	   </plugins>
+   </build>
+   
+   <reporting>
+   	<plugins>
+   		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-report-plugin</artifactId>
+			<version>2.7.1</version>
+		</plugin>
+   	</plugins>
+   </reporting>
+</project>

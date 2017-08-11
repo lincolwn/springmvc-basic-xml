@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/sismanDataSource" auth="Container"
+	factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+	type="javax.sql.DataSource"
+	initialSize="1"
+	minIdle="1"
+	maxIdle="3"
+	maxWait="5000"
+	username="postgres"
+	password="postgres"
+	driverClassName="org.postgresql.Driver"
+	url="jdbc:postgresql://localhost:5432/lincolwn" />
+</Context>
